@@ -2,10 +2,12 @@ import { ObjectHooks } from "../lib";
 
 
 export class SampleClass<T extends { 'someKey': any }> implements ObjectHooks<T> {
-  public onPropertyChange<K extends keyof T>(key: K, callbackfn?: ((value: T[K], oldValue: T[K]) => void) | undefined): this {
+  public onPropertyChange<K extends keyof T>(
+    key: K, callbackfn?: ((value: T[K], oldValue: T[K]) => void) | undefined): this {
     return this;
   }
-  public onSetProperty<K extends keyof T>(key: K, callbackfn?: ((value: T[K], oldValue: T[K]) => T[K]) | undefined): this {
+  public onSetProperty<K extends keyof T>(
+    key: K, callbackfn?: ((value: T[K], oldValue: T[K]) => T[K]) | undefined): this {
     return this;
   }
 }
