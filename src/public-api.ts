@@ -5,8 +5,8 @@
 export type {
   // Core.
   ChangeHook,
-  SetHook,
   DestroyHook,
+  SetHook,
   // Specialized for properties.
   PropertyChangeHook,
   SetPropertyHook,
