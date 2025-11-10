@@ -21,8 +21,15 @@ A **TypeScript** type definitions package for managing hooks [**@typescript-pack
 - [Installation](#installation)
 - [Api](#api)
   - [Interface](#interface)
+    - [`ChangeHook`](#changehook)
+    - [`DestroyHook`](#destroyhook)
+    - [`PropertyChangeHook`](#propertychangehook)
+    - [`SetHook`](#sethook)
     - [`Hooks`](#hooks)
     - [`ObjectHooks`](#objecthooks)
+  - [Types](#type)
+    - [`AllHooks`](#allhooks)
+    - [`HookNames`](#hooknames)
 - [Contributing](#contributing)
 - [Support](#support)
 - [Code of Conduct](#code-of-conduct)
@@ -44,13 +51,56 @@ npm install @typedly/hooks --save-peer
 
 ```typescript
 import {
-  // Interface.
+  // Core.
+  ChangeHook,
+  DestroyHook,
+  SetHook,
+  // Specialized for properties.
+  PropertyChangeHook,
+  SetPropertyHook,
+  // Composite.
   Hooks,
   ObjectHooks,
+
+  // Types.
+  AllHooks,
+  HookNames
 } from '@typedly/data';
 ```
 
 ### Interface
+
+The `ChangeHook` interface defines a lifecycle hook for managing changes of an object of type `T`.
+
+#### `ChangeHook`
+
+```typescript
+import { ChangeHook } from '@typedly/hooks';
+```
+
+#### `DestroyHook`
+
+The `DestroyHook` interface defines a lifecycle hook for managing the destruction of an object of type `T`.
+
+```typescript
+import { DestroyHook } from '@typedly/hooks';
+```
+
+#### `PropertyChangeHook`
+
+The `PropertyChangeHook` interface defines a lifecycle hook for managing changes to specific properties of an object of type `T`.
+
+```typescript
+import { PropertyChangeHook } from '@typedly/hooks';
+```
+
+#### `SetHook`
+
+The `SetHook` interface defines a lifecycle hook for managing the setting of a value of type `T`.
+
+```typescript
+import { SetHook } from '@typedly/hooks';
+```
 
 #### `Hooks`
 
@@ -92,6 +142,26 @@ class SampleClass<T extends { 'someKey': any }> implements ObjectHooks<T> {
 ```
 
 [Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/object-hooks.interface.ts)
+
+### Type
+
+#### `AllHooks`
+
+The all hooks type.
+
+```typescript
+import { AllHooks } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/type/all-hooks.interface.ts)
+
+#### `HookNames`
+
+```typescript
+import { HookNames } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/type/hooks-names.type.ts)
 
 ## Contributing
 
