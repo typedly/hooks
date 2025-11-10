@@ -3,6 +3,18 @@
  */
 
 export type {
+  // Core.
+  ChangeHook,
+  SetHook,
+  DestroyHook,
+  // Specialized for properties.
+  PropertyChangeHook,
+  SetPropertyHook,
+  // Composite.
   Hooks,
-  ObjectHooks
+  ObjectHooks,
+
+  // Types.
+  AllHooks,
+  HookNames
 } from './lib';
