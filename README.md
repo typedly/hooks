@@ -58,6 +58,18 @@ The `Hooks` interface defines a set of lifecycle hooks for managing changes and 
 
 ```typescript
 import { Hooks } from '@typedly/hooks';
+
+class SampleClass<T extends number> implements Hooks<T> {
+  public onChange(callbackfn?: ((value: T, oldValue: T) => void) | undefined): this {
+    return this;
+  }
+  public onDestroy(callbackfn?: (() => void) | undefined): this {
+    return this;
+  }
+  public onSet(callbackfn?: ((value: T, oldValue?: T) => T) | undefined): this {
+    return this;
+  }
+}
 ```
 
 [Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/hooks.interface.ts)
@@ -68,6 +80,15 @@ The `ObjectHooks` interface defines a set of lifecycle hooks for managing change
 
 ```typescript
 import { ObjectHooks } from '@typedly/hooks';
+
+class SampleClass<T extends { 'someKey': any }> implements ObjectHooks<T> {
+  public onPropertyChange<K extends keyof T>(key: K, callbackfn?: ((value: T[K], oldValue: T[K]) => void) | undefined): this {
+    return this;
+  }
+  public onSetProperty<K extends keyof T>(key: K, callbackfn?: ((value: T[K], oldValue: T[K]) => T[K]) | undefined): this {
+    return this;
+  }
+}
 ```
 
 [Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/object-hooks.interface.ts)
