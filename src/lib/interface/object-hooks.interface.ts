@@ -5,6 +5,6 @@
  * @template T The type of the object the hooks are associated with.
  */
 export interface ObjectHooks<T> {
-  onPropertyChange<K extends keyof T>(key: K, callbackfn?: (value: T[K], oldValue: T[K]) => void): this;
-  onSetProperty<K extends keyof T>(key: K, callbackfn?: (value: T[K], oldValue: T[K]) => T[K]): this;
+  onPropertyChange?<K extends keyof T>(key: K, callbackfn?: (value: T[K], oldValue: T[K]) => void): this;
+  onSetProperty?<K extends keyof T>(key: K, callbackfn?: (value: T[K], oldValue?: T[K]) => T[K]): this;
 }

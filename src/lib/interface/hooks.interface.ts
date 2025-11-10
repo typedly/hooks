@@ -10,19 +10,19 @@ export interface Hooks<T> {
    * @param {?(value: T, oldValue: T) => void} [callbackfn] 
    * @returns {this} 
    */
-  onChange(callbackfn?: (value: T, oldValue: T) => void): this;
+  onChange?(callbackfn?: (value: T, oldValue: T) => void): this;
 
   /**
    * @description The onDestroy hook is triggered when the object is destroyed.
    * @param {?() => void} [callbackfn] 
    * @returns {this} 
    */
-  onDestroy(callbackfn?: () => void): this;
+  onDestroy?(callbackfn?: () => void): this;
 
   /**
    * @description The onSet hook is triggered before the value is set.
-   * @param {?(value: T) => T} [callbackfn] 
+   * @param {?(value: T, oldValue?: T) => T} [callbackfn] 
    * @returns {this} 
    */
-  onSet(callbackfn?: (value: T) => T): this;
+  onSet?(callbackfn?: (value: T, oldValue?: T) => T): this;
 }
