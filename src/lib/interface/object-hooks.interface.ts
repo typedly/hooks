@@ -8,6 +8,6 @@ import { OnPropertyChangeCallback, OnSetPropertyCallback } from "@typedly/callba
  * @template [Payload=unknown] 
  */
 export interface ObjectHooks<T extends object, Payload = unknown> {
-  onPropertyChange?: OnPropertyChangeCallback<T, Payload>;
-  onSetProperty?: OnSetPropertyCallback<T, Payload>;
+  onPropertyChange?(callbackfn?: OnPropertyChangeCallback<T, Payload>): this;
+  onSetProperty?(callbackfn?: OnSetPropertyCallback<T, Payload>): this;
 }

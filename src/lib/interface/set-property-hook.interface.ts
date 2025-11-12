@@ -10,7 +10,8 @@ import { OnSetPropertyCallback } from '@typedly/callback';
 export interface SetPropertyHook<T extends object, Payload = unknown> {
   /**
    * @description The `onSetProperty` hook is triggered before a property value is set.
-   * @type {?OnSetPropertyCallback<T, Payload>}
+   * @param {?OnSetPropertyCallback<T, Payload>} callbackfn The callback function to be called on set property.
+   * @returns {this} The current instance for chaining.
    */
-  onSetProperty?: OnSetPropertyCallback<T, Payload>;
+  onSetProperty?(callbackfn?: OnSetPropertyCallback<T, Payload>): this;
 }

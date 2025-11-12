@@ -9,7 +9,8 @@ import { OnSetCallback } from "@typedly/callback";
 export interface SetHook<T, Payload = unknown> {
   /**
    * @description The onSet hook is triggered before the value is set.
-   * @type {?OnSetCallback<T, Payload>}
+   * @param {?OnSetCallback<T, Payload>} callbackfn The callback function to be called on set.
+   * @returns {this} The current instance for chaining.
    */
-  onSet?: OnSetCallback<T, Payload>;
+  onSet?(callbackfn?: OnSetCallback<T, Payload>): this;
 }
