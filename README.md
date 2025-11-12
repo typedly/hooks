@@ -172,7 +172,7 @@ The all hooks type.
 import { AllHooks } from '@typedly/hooks';
 ```
 
-[Source](https://github.com/typedly/hooks/blob/main/src/lib/type/all-hooks.interface.ts)
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/type/all-hooks.type.ts)
 
 #### `HookNames`
 
@@ -180,7 +180,7 @@ import { AllHooks } from '@typedly/hooks';
 import { HookNames } from '@typedly/hooks';
 ```
 
-[Source](https://github.com/typedly/hooks/blob/main/src/lib/type/hooks-names.type.ts)
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/type/hook-names.type.ts)
 
 ## Contributing
 
