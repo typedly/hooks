@@ -66,7 +66,7 @@ import {
   // Types.
   AllHooks,
   HookNames
-} from '@typedly/data';
+} from '@typedly/hooks';
 ```
 
 ### Interface
@@ -263,7 +263,7 @@ MIT © typedly ([license][typedly-license])
   <!-- GitHub: badges -->
   [typedly-badge-issues]: https://img.shields.io/github/issues/typedly/hooks
   [typedly-badge-forks]: https://img.shields.io/github/forks/typedly/hooks
-  [typedly-badge-stars]: https://img.shields.io/github/stars/typedly/data
+  [typedly-badge-stars]: https://img.shields.io/github/stars/typedly/hooks
   [typedly-badge-license]: https://img.shields.io/github/license/typedly/hooks
   <!-- GitHub: badges links -->
   [typedly-issues]: https://github.com/typedly/hooks/issues
