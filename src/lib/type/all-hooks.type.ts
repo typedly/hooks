@@ -1,5 +1,5 @@
 // Interface.
-import { ChangeHook, DestroyHook, PropertyChangeHook, SetHook, SetPropertyHook } from "../interface";
+import { ChangeHook, DestroyHook, SetHook, SetPropertyHook, PropertyChangeHook } from "../interface";
 // Type.
 import { HookNames } from "./hook-names.type";
 /**
@@ -11,5 +11,5 @@ export type AllHooks<T, K extends HookNames> =
   (K extends 'change' ? ChangeHook<T> : {}) &
   (K extends 'destroy' ? DestroyHook<T> : {}) &
   (K extends 'set' ? SetHook<T> : {}) &
-  (K extends 'propertyChange' ? PropertyChangeHook<T> : {}) &
-  (K extends 'setProperty' ? SetPropertyHook<T> : {});
+  (K extends 'propertyChange' ? T extends object ? PropertyChangeHook<T> : {} : {}) &
+  (K extends 'setProperty' ? T extends object ? SetPropertyHook<T> : {} : {});

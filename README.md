@@ -23,10 +23,11 @@ A **TypeScript** type definitions package for managing hooks [**@typescript-pack
   - [Interface](#interface)
     - [`ChangeHook`](#changehook)
     - [`DestroyHook`](#destroyhook)
+    - [`ObjectHooks`](#objecthooks)
     - [`PropertyChangeHook`](#propertychangehook)
     - [`SetHook`](#sethook)
+    - [`SetPropertyHook`](#setpropertyhook)
     - [`Hooks`](#hooks)
-    - [`ObjectHooks`](#objecthooks)
   - [Types](#type)
     - [`AllHooks`](#allhooks)
     - [`HookNames`](#hooknames)
@@ -53,8 +54,8 @@ npm install @typedly/hooks --save-peer
 import {
   // Core.
   ChangeHook,
-  DestroyHook,
   SetHook,
+  DestroyHook,
   // Specialized for properties.
   PropertyChangeHook,
   SetPropertyHook,
@@ -65,18 +66,20 @@ import {
   // Types.
   AllHooks,
   HookNames
-} from '@typedly/data';
+} from '@typedly/hooks';
 ```
 
 ### Interface
 
-The `ChangeHook` interface defines a lifecycle hook for managing changes of an object of type `T`.
-
 #### `ChangeHook`
+
+The `ChangeHook` interface defines a lifecycle hook for managing changes of an object of type `T`.
 
 ```typescript
 import { ChangeHook } from '@typedly/hooks';
 ```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/change-hook.interface.ts)
 
 #### `DestroyHook`
 
@@ -86,21 +89,7 @@ The `DestroyHook` interface defines a lifecycle hook for managing the destructio
 import { DestroyHook } from '@typedly/hooks';
 ```
 
-#### `PropertyChangeHook`
-
-The `PropertyChangeHook` interface defines a lifecycle hook for managing changes to specific properties of an object of type `T`.
-
-```typescript
-import { PropertyChangeHook } from '@typedly/hooks';
-```
-
-#### `SetHook`
-
-The `SetHook` interface defines a lifecycle hook for managing the setting of a value of type `T`.
-
-```typescript
-import { SetHook } from '@typedly/hooks';
-```
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/destroy-hook.interface.ts)
 
 #### `Hooks`
 
@@ -142,6 +131,36 @@ class SampleClass<T extends { 'someKey': any }> implements ObjectHooks<T> {
 ```
 
 [Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/object-hooks.interface.ts)
+
+#### `PropertyChangeHook`
+
+The `PropertyChangeHook` interface defines a lifecycle hook for managing changes to specific properties of an object of type `T`.
+
+```typescript
+import { PropertyChangeHook } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/property-change-hook.interface.ts)
+
+#### `SetHook`
+
+The `SetHook` interface defines a lifecycle hook for managing the setting of a value of type `T`.
+
+```typescript
+import { SetHook } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/set-hook.interface.ts)
+
+#### `SetPropertyHook`
+
+The `SetPropertyHook` interface defines a lifecycle hook for managing the setting of a property value of an object of type `T`.
+
+```typescript
+import { SetPropertyHook } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/set-property-hook.interface.ts)
 
 ### Type
 
@@ -244,7 +263,7 @@ MIT © typedly ([license][typedly-license])
   <!-- GitHub: badges -->
   [typedly-badge-issues]: https://img.shields.io/github/issues/typedly/hooks
   [typedly-badge-forks]: https://img.shields.io/github/forks/typedly/hooks
-  [typedly-badge-stars]: https://img.shields.io/github/stars/typedly/data
+  [typedly-badge-stars]: https://img.shields.io/github/stars/typedly/hooks
   [typedly-badge-license]: https://img.shields.io/github/license/typedly/hooks
   <!-- GitHub: badges links -->
   [typedly-issues]: https://github.com/typedly/hooks/issues
