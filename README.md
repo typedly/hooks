@@ -57,7 +57,7 @@ import {
   SetHook,
   DestroyHook,
   // Specialized for properties.
-  ChangePropertyHook,
+  PropertyChangeHook,
   SetPropertyHook,
   // Composite.
   Hooks,
