@@ -1,10 +1,13 @@
+// Interface.
+import { OnPropertyChangeCallback, OnSetPropertyCallback } from "@typedly/callback";
 /**
  * @description The `ObjectHooks` interface defines a set of lifecycle hooks for managing changes to properties of an object of type `T`.
  * @export
  * @interface ObjectHooks
  * @template T The type of the object the hooks are associated with.
+ * @template [Payload=unknown] 
  */
-export interface ObjectHooks<T> {
-  onPropertyChange?<K extends keyof T>(key: K, callbackfn?: (value: T[K], oldValue: T[K]) => void): this;
-  onSetProperty?<K extends keyof T>(key: K, callbackfn?: (value: T[K], oldValue?: T[K]) => T[K]): this;
+export interface ObjectHooks<T extends object, Payload = unknown> {
+  onPropertyChange?: OnPropertyChangeCallback<T, Payload>;
+  onSetProperty?: OnSetPropertyCallback<T, Payload>;
 }
