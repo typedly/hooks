@@ -10,7 +10,8 @@ import { OnPropertyChangeCallback } from '@typedly/callback';
 export interface PropertyChangeHook<T extends object, Payload = unknown> {
   /**
    * @description The `onPropertyChange` hook is triggered whenever a specific property value changes.
-   * @type {?OnPropertyChangeCallback<T, Payload>}
+   * @param {?OnPropertyChangeCallback<T, Payload>} callbackfn The callback function to be called on property change.
+   * @returns {this} The current instance for chaining.
    */
-  onPropertyChange?: OnPropertyChangeCallback<T, Payload>;
+  onPropertyChange?(callbackfn?: OnPropertyChangeCallback<T, Payload>): this;
 }

@@ -9,7 +9,8 @@ import { OnDestroyCallback } from "@typedly/callback";
 export interface DestroyHook<Payload> {
   /**
    * @description The onDestroy hook is triggered when the object is destroyed.
-   * @type {?OnDestroyCallback<Payload>}
+   * @param {?OnDestroyCallback<Payload>} callbackfn The callback function to be called on destroy.
+   * @returns {this} The current instance for chaining.
    */
-  onDestroy?: OnDestroyCallback<Payload>;
+  onDestroy?(callbackfn?: OnDestroyCallback<Payload>): this;
 }
