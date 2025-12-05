@@ -1,11 +1,28 @@
 export type {
-  // Core.
+  // Lifecycle.
+  // After.
+  AfterAllHook,
+  AfterEachHook,
+  // Before.
+  BeforeAllHook,
+  BeforeEachHook,
+
+  AddHook,
   ChangeHook,
-  SetHook,
+  ClearHook,
+  DeleteHook,
   DestroyHook,
+  GetHook,
+  LockHook,
+  ReplaceHook,
+  SetHook,
+  UnlockHook,
+  UpdateHook,
+
   // Specialized for properties.
   PropertyChangeHook,
   SetPropertyHook,
+
   // Composite.
   Hooks,
   ObjectHooks
