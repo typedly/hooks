@@ -188,7 +188,7 @@ import { GetHook } from '@typedly/hooks';
 
 #### `LockHook`
 
-The shape of lock hook.
+The shape of the lock hook.
 
 ```typescript
 import { LockHook } from '@typedly/hooks';
