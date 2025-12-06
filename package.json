@@ -25,7 +25,13 @@
   },
   "keywords": [
     "@typedly",
-    "@typedly/hooks"
+    "@typedly/hooks",
+    "AddHook",
+    "AfterAll",
+    "AfterEach",
+    "BeforeAll",
+    "BeforeEach",
+    "ClearHook"
   ],
   "funding": [
     {
