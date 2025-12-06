@@ -3,7 +3,7 @@
  * @export
  * @interface UnlockHook
  * @template Payload The type of the payload for the unlock operation.
- * @template [CallbackFn=(payload?: Payload) => void] 
+ * @template [CallbackFn=(payload?: Payload) => void]
  */
 export interface UnlockHook<Payload, CallbackFn = (payload?: Payload) => void> {
   onUnlockCallback?: CallbackFn;
