@@ -168,7 +168,7 @@ import { ClearHook } from '@typedly/hooks';
 
 #### `DeleteHook`
 
-The shape of delete hook.
+The shape of the delete hook.
 
 ```typescript
 import { DeleteHook } from '@typedly/hooks';
