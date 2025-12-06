@@ -3,7 +3,7 @@
  * @export
  * @interface AfterEachHook
  * @template T The type of arguments being processed.
- * @template [CallbackFn=(...args: T[]) => void] 
+ * @template [CallbackFn=(...args: T[]) => void]
  */
 export interface AfterEachHook<T, CallbackFn = (...args: T[]) => void> {
   afterEachCallback?: CallbackFn;
