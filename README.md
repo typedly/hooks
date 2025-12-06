@@ -299,7 +299,7 @@ import { SetPropertyHook } from '@typedly/hooks';
 
 #### `UnlockHook`
 
-The shape of unlock hook.
+The shape of the unlock hook.
 
 ```typescript
 import { UnlockHook } from '@typedly/hooks';
