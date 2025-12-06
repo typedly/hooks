@@ -198,7 +198,7 @@ import { LockHook } from '@typedly/hooks';
 
 #### `ReplaceHook`
 
-The shape of replace hook.
+The shape of the replace hook.
 
 ```typescript
 import { ReplaceHook } from '@typedly/hooks';
