@@ -178,7 +178,7 @@ import { DeleteHook } from '@typedly/hooks';
 
 #### `GetHook`
 
-The shape of get hook.
+The shape of the get hook.
 
 ```typescript
 import { GetHook } from '@typedly/hooks';
