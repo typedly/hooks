@@ -3,7 +3,7 @@
  * @export
  * @interface BeforeAllHook
  * @template T The type of arguments being processed.
- * @template [CallbackFn=(...args: T[]) => void]
+ * @template [CallbackFn=(...args: T[]) => void] The type of callback function.
  */
 export interface BeforeAllHook<T, CallbackFn = (...args: T[]) => void> {
   beforeAllCallback?: CallbackFn;
