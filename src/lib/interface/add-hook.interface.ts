@@ -4,7 +4,7 @@
  * @interface AddHook
  * @template T The type of item being added.
  * @template Payload The type of the payload for the addition.
- * @template [CallbackFn=(item: T, payload?: Payload) => void] 
+ * @template [CallbackFn=(item: T, payload?: Payload) => void]
  */
 export interface AddHook<T, Payload, CallbackFn = (item: T, payload?: Payload) => void> {
   onAddCallback?: CallbackFn;
