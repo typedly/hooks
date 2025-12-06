@@ -309,7 +309,7 @@ import { UnlockHook } from '@typedly/hooks';
 
 #### `UpdateHook`
 
-The shape of unlock hook.
+The shape of update hook.
 
 ```typescript
 import { UpdateHook } from '@typedly/hooks';
