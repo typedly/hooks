@@ -3,7 +3,7 @@
  * @export
  * @interface DeleteHook
  * @template T The type of item being deleted.
- * @template [CallbackFn=(item: T) => void] 
+ * @template [CallbackFn=(item: T) => void]
  */
 export interface DeleteHook<T, CallbackFn = (item: T) => void> {
   onDeleteCallback?: CallbackFn;
