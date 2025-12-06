@@ -1,5 +1,5 @@
 /**
- * @description The shape of lock hook.
+ * @description The shape of the lock hook.
  * @export
  * @interface LockHook
  * @template Payload The type of the payload for the lock operation.
