@@ -1,16 +1,51 @@
+import { OnPropertyChangeCallback, OnSetPropertyCallback } from "@typedly/callback";
 import { ObjectHooks } from "../lib";
 
 
 export class SampleClass<T extends { 'someKey': any }> implements ObjectHooks<T> {
-  public onPropertyChange<K extends keyof T>(
-    key: K, callbackfn?: ((value: T[K], oldValue: T[K]) => void) | undefined): this {
+  public onPropertyChangeCallback?: OnPropertyChangeCallback<T, unknown>;
+  public onSetPropertyCallback?: OnSetPropertyCallback<T, unknown>;
+
+  public onPropertyChange(callbackfn?: OnPropertyChangeCallback<T, unknown>): this {
+    this.onPropertyChangeCallback = callbackfn;
     return this;
   }
-  public onSetProperty<K extends keyof T>(
-    key: K, callbackfn?: ((value: T[K], oldValue: T[K]) => T[K]) | undefined): this {
+  public onSetProperty(callbackfn?: OnSetPropertyCallback<T, unknown>): this {
+    this.onSetPropertyCallback = callbackfn;
     return this;
+  }
+
+  private _sampleProperty!: T['someKey'];
+
+  public get sampleProperty() {
+    return this._sampleProperty;
+  }
+
+  public set sampleProperty(value: T['someKey']) {
+    const oldValue = this._sampleProperty;
+    const newValue = this.onSetPropertyCallback
+      ? this.onSetPropertyCallback('someKey' as keyof T, value, oldValue)
+      : value;
+    this._sampleProperty = newValue;
+    this.onPropertyChangeCallback?.('someKey' as keyof T, newValue, oldValue);
   }
 }
+
+const sampleClass = new SampleClass<{ someKey: any }>();
+
+sampleClass.onPropertyChange((key, value, oldValue) => {
+  console.log(`${key} Value changed from ${oldValue} to ${value}`);
+});
+
+sampleClass.onSetProperty((key, value, oldValue) => {
+  console.log(`Setting ${key} to ${value}`);
+  return value;
+});
+
+// sampleClass.onPropertyChangeCallback?.('someKey', 42, 10);
+// sampleClass.onSetPropertyCallback?.('someKey', 100, 42);
+
+sampleClass.sampleProperty = 'b';
 
 describe('Hooks Interface', () => {
   let sampleClass: SampleClass<{ someKey: any }>;
@@ -24,16 +59,16 @@ describe('Hooks Interface', () => {
   });
 
   it('should call onPropertyChange method', () => {
-    const result = sampleClass.onPropertyChange('someKey', (value, oldValue) => {
-      console.log(`Value changed from ${oldValue} to ${value}`);
+    const result = sampleClass.onPropertyChange((key, value, oldValue) => {
+      console.log(`${key} Value changed from ${oldValue} to ${value}`);
     });
     expect(result).toBe(sampleClass);
   });
 
 
   it('should call onSetProperty method', () => {
-    const result = sampleClass.onSetProperty('someKey', (value, oldValue) => {
-      console.log(`Setting value to ${value}`);
+    const result = sampleClass.onSetProperty((key, value, oldValue) => {
+      console.log(`Setting ${key} to ${value}`);
       return value;
     });
     expect(result).toBe(sampleClass);

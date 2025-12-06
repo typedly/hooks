@@ -21,13 +21,31 @@ A **TypeScript** type definitions package for managing hooks [**@typescript-pack
 - [Installation](#installation)
 - [Api](#api)
   - [Interface](#interface)
+    - [`AfterAllHook`](#afterallhook)
+    - [`AfterEachHook`](#aftereachhook)
+    - [`BeforeAllHook`](#beforeallhook)
+    - [`BeforeEachHook`](#beforeeachhook)
+
+    - [`AddHook`](#addhook)
+    - [`ClearHook`](#clearhook)
+    - [`DeleteHook`](#deletehook)
+
+    - [`GetHook`](#gethook)
+    - [`LockHook`](#lockhook)
+    - [`ReplaceHook`](#replacehook)
+
     - [`ChangeHook`](#changehook)
     - [`DestroyHook`](#destroyhook)
+    - [`Hooks`](#hooks)
+
     - [`ObjectHooks`](#objecthooks)
     - [`PropertyChangeHook`](#propertychangehook)
     - [`SetHook`](#sethook)
     - [`SetPropertyHook`](#setpropertyhook)
-    - [`Hooks`](#hooks)
+
+    - [`UnlockHook`](#unlockhook)
+    - [`UpdateHook`](#updatehook)
+
   - [Types](#type)
     - [`AllHooks`](#allhooks)
     - [`HookNames`](#hooknames)
@@ -52,13 +70,30 @@ npm install @typedly/hooks --save-peer
 
 ```typescript
 import {
-  // Core.
+  // Lifecycle.
+  // After.
+  AfterAllHook,
+  AfterEachHook,
+  // Before.
+  BeforeAllHook,
+  BeforeEachHook,
+
+  AddHook,
   ChangeHook,
-  SetHook,
+  ClearHook,
+  DeleteHook,
   DestroyHook,
+  GetHook,
+  LockHook,
+  ReplaceHook,
+  SetHook,
+  UnlockHook,
+  UpdateHook,
+
   // Specialized for properties.
   PropertyChangeHook,
   SetPropertyHook,
+
   // Composite.
   Hooks,
   ObjectHooks,
@@ -70,6 +105,106 @@ import {
 ```
 
 ### Interface
+
+#### `AfterAllHook`
+
+The shape of the after all hook.
+
+```typescript
+import { AfterAllHook } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/after-all-hook.interface.ts)
+
+#### `AfterEachHook`
+
+The shape of the after each hook.
+
+```typescript
+import { AfterEachHook } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/after-each-hook.interface.ts)
+
+#### `BeforeAllHook`
+
+The shape of the before all hook.
+
+```typescript
+import { BeforeAllHook } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/before-all-hook.interface.ts)
+
+#### `BeforeEachHook`
+
+The shape of the before each hook.
+
+```typescript
+import { BeforeEachHook } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/before-each-hook.interface.ts)
+
+#### `AddHook`
+
+The `AddHook` interface defines a Lifecycle hook for managing the addition of item of type `T`.
+
+```typescript
+import { AddHook } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/add-hook.interface.ts)
+
+#### `ClearHook`
+
+The shape of the clear hook.
+
+```typescript
+import { ClearHook } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/clear-hook.interface.ts)
+
+#### `DeleteHook`
+
+The shape of the delete hook.
+
+```typescript
+import { DeleteHook } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/delete-hook.interface.ts)
+
+#### `GetHook`
+
+The shape of the get hook.
+
+```typescript
+import { GetHook } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/get-hook.interface.ts)
+
+#### `LockHook`
+
+The shape of the lock hook.
+
+```typescript
+import { LockHook } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/lock-hook.interface.ts)
+
+#### `ReplaceHook`
+
+The shape of the replace hook.
+
+```typescript
+import { ReplaceHook } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/replace-hook.interface.ts)
 
 #### `ChangeHook`
 
@@ -161,6 +296,26 @@ import { SetPropertyHook } from '@typedly/hooks';
 ```
 
 [Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/set-property-hook.interface.ts)
+
+#### `UnlockHook`
+
+The shape of the unlock hook.
+
+```typescript
+import { UnlockHook } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/unlock-hook.interface.ts)
+
+#### `UpdateHook`
+
+The shape of update hook.
+
+```typescript
+import { UpdateHook } from '@typedly/hooks';
+```
+
+[Source](https://github.com/typedly/hooks/blob/main/src/lib/interface/update-hook.interface.ts)
 
 ### Type
 
