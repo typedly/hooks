@@ -11,7 +11,7 @@ export class SampleClass<T extends { 'someKey': any }> implements ObjectHooks<T>
     return this;
   }
   public onSetProperty(callbackfn?: OnSetPropertyCallback<T, unknown>): this {
-      this.onSetPropertyCallback = callbackfn;
+    this.onSetPropertyCallback = callbackfn;
     return this;
   }
 
