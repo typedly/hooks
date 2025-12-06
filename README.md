@@ -158,7 +158,7 @@ import { AddHook } from '@typedly/hooks';
 
 #### `ClearHook`
 
-The shape of clear hook.
+The shape of the clear hook.
 
 ```typescript
 import { ClearHook } from '@typedly/hooks';
