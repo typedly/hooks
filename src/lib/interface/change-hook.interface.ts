@@ -4,7 +4,8 @@ import { OnChangeCallback } from '@typedly/callback';
  * @description The `ChangeHook` interface defines a lifecycle hook for managing changes of an object of type `T`.
  * @export
  * @interface ChangeHook
- * @template T 
+ * @template T The type of value being changed.
+ * @template Payload The type of payload.
  */
 export interface ChangeHook<T, Payload = unknown> {
   /**
